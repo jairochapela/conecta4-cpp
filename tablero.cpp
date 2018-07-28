@@ -31,6 +31,7 @@ void Tablero::ponerFicha(int columna, int color){
 
 
 int Tablero::comprobarDireccion(int avanceH, int avanceV, int n){
+
     for (int fila = 0; fila < 6; fila++){
         for (int columna = 0; columna < 7; columna++) {
             int color = casillas[fila][columna];
@@ -66,12 +67,12 @@ int Tablero::ganador(){
     colorGanador = comprobarDireccion(0, 1, 4);
     if (colorGanador) return colorGanador;
 
-    // diagonales \ 
+    // diagonales
     colorGanador = comprobarDireccion(1, 1, 4);
     if (colorGanador) return colorGanador;
 
-    // diagonales /
-    colorGanador = comprobarDireccion(1, -1, 4);
+    // diagonales inversas
+    colorGanador = comprobarDireccion(-1, 1, 4);
     return colorGanador;
 } 
 

@@ -14,6 +14,8 @@ int main(int, char**) {
     Tablero x;
     int columna;
 
+    cout << x << endl;
+
     do {
 
         cout << "Jugador A, introduzca ficha: " << endl;
@@ -22,6 +24,8 @@ int main(int, char**) {
         a.jugarFicha(columna, x);
 
         cout << x << endl;
+        
+        if (x.ganador()) break;
 
         cout << "Jugador B, introduzca ficha: " << endl;
         cin >> columna;
@@ -36,7 +40,6 @@ int main(int, char**) {
 
 
 
-    cout << x << endl;
 
     cout << "Ganador: " << x.ganador() << endl;
 }
